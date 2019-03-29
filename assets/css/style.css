@@ -1,32 +1,60 @@
 body {
-    margin: 0;
-    overflow: hidden;
-   
-  }
-
-  body * {
-    border:.5px solid black;
-  }
-
-  .canvas1{
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-
-  .canvas2{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-  }
-
+  margin: 0;
+}
+/* #container *{
+  border:.5px solid #000;
+} */
 
 #container{
-  position: relative;
-  top: 0;
-  left: 0;
+  display: grid;
+  height: 100vh;
+  grid-template-areas: 
+            "header header header"
+            "left canvas right"
+            "footer footer footer";
 }
 
-.canvas2 > #icon-class{
-  height: 200px;
+header{
+  grid-area: header;
+}
+
+#left{
+  grid-area: left;
+}
+
+#right{
+  grid-area: left;
+}
+
+#canvas-container{
+  /* background-color: aqua; */
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-areas: 
+  "s s s"
+  "s watch s"
+  "s s s";
+}
+
+.canvas1{
+  grid-area: watch;
+  position: relative;
+  height: 300px;
+  z-index: 1;
+
+}
+
+.canvas2{
+  /* position: absolute;
+  top: 35px;
+  left: 47px; */
+  height: 300px;
+  grid-area: watch;
+  z-index: 100;
+  
+}
+
+footer{
+  grid-area: footer;
 }
