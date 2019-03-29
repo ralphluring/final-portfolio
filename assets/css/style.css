@@ -9,12 +9,24 @@ body {
   }
 
   .canvas1{
-     
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .canvas2{
+    position: absolute;
+    top: 0px;
+    left: 0px;
   }
 
 
 #container{
-    display: grid;
-    justify-items: center;
-    align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.canvas2 > #icon-class{
+  height: 200px;
 }
