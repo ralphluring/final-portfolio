@@ -1,9 +1,7 @@
 body {
   margin: 0;
+  font-family: 'Istok Web', sans-serif;
 }
-/* #container *{
-  border:.5px solid #000;
-} */
 
 #container{
   display: grid;
@@ -16,14 +14,37 @@ body {
 
 header{
   grid-area: header;
+display: flex;
+justify-content: center;
+align-items: center;
 }
+
+nav{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "logo s portfolio"
+  ;
+}
+
+nav a{
+  text-align: center;
+  text-decoration: none;
+  color:#000
+}
+
+#logo{grid-area: logo;}
+#portfolio{grid-area: portfolio;}
+
 
 #left{
   grid-area: left;
+  background-color: #EEEFDF;
 }
 
 #right{
   grid-area: right;
+  background-color: #EEF7DF;
 }
 
 #canvas-container{
@@ -57,4 +78,7 @@ header{
 
 footer{
   grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
