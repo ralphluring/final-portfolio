@@ -32,28 +32,13 @@ function getWeather(queryURL){
 }
 
 function renderData(temp,icon){
-  console.log(icon);
   let canvas = document.querySelector('.canvas2');
   let ctx = canvas.getContext('2d');
-
- 
-
-
-  ctx.font = "25px Arial";
-  if(temp < 50){
-    ctx.fillStyle = 'white';
-  }else if(temp > 50 && temp < 80){
-    ctx.fillStyle = 'blue';
-  }else{
-    ctx.fillStyle = 'red';
-  }
-
-  ctx.fillText(temp + " F",240,60);
-  console.log(temp)
+  ctx.font = "14px Arial";
+  ctx.fillStyle = '#9EBBC4';
+  ctx.fillText(temp + " F",250,55);
+  ctx.fillText(icon,100,220);
 }
-
-
-
 
 function renderTime(){
     let now = moment().format("h:mm:ss");
@@ -71,7 +56,7 @@ function renderTime(){
     let daysInMonth = moment().daysInMonth();
 
     // background
-    ctx.fillStyle = '#B26009';
+    ctx.fillStyle = '#fff';
     ctx.fillRect(0,0,300,300);
 
     // hours
@@ -101,15 +86,15 @@ function renderTime(){
     ctx.fillStyle = '#9EBBC4';
     ctx.fillText(monthText,monthDistance + 10,273);
   // day
-    let dayDistance = 260/daysInMonth;
+    let dayDistance = Math.floor(260/daysInMonth) * day;
     ctx.beginPath();
     ctx.moveTo(20,290);
-    ctx.lineTo((dayDistance * day),290)
+    ctx.lineTo((dayDistance+20),290)
     ctx.stroke();
     ctx.font = "25px Arial";
     ctx.fillStyle = '#9EBBC4';
     ctx.font = "12px Arial";
-    ctx.fillText(day,(dayDistance * day +10),292);
+    ctx.fillText(day,(dayDistance +30),292);
     ctx.font = "25px Arial";
     ctx.fillStyle = '#FFBE8F';
     ctx.fillText(am,250,30);

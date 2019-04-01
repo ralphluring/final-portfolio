@@ -23,7 +23,7 @@ header{
 }
 
 #right{
-  grid-area: left;
+  grid-area: right;
 }
 
 #canvas-container{
