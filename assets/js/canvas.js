@@ -37,14 +37,7 @@ function renderData(temp,icon){
   let ctx = canvas.getContext('2d');
 
  
-  if(icon === "Last Quarter"){
-    let img = new Image();
-    img.src = "./assets/images/lastquarter.svg";
-    img.onload = function () {
-      ctx.drawImage(img, 260, 70,30,30);
-    }
-    
-  }
+
 
   ctx.font = "25px Arial";
   if(temp < 50){
